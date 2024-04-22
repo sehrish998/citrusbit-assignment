@@ -1,0 +1,19 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json" /* Recommended React Native TSConfig base */,
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "baseUrl": "src",
+    "paths": {
+      "tslib": ["path/to/node_modules/tslib/tslib.d.ts"],
+      "@components/*": ["components/*"],
+      "@assets/*": ["assets/*"],
+      "@api/*": ["api/*"],
+      "@screens/*": ["screens/*"],
+      "@hooks/*": ["hooks/*"],
+      "@models/*": ["models/*"],
+      "@utils/*": ["utils/*"],
+    } /* Skip type checking all .d.ts files. */
+  },
+
+  "rules": {}
+}
