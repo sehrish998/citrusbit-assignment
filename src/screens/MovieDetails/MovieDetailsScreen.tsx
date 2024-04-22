@@ -10,7 +10,7 @@ import AppTableContent from '@components/AppTableContent';
 import AppBackButton from '@components/AppBackButton';
 
 const MovieDetailsScreen = (props: any) => {
-  const getAllGenre: any = useGetAllGenre();
+  const getAllGenre: any = useGetAllGenre(); //get all the genres
 
   const {
     vote_count,
@@ -25,11 +25,11 @@ const MovieDetailsScreen = (props: any) => {
     genre_ids,
     poster_path,
     original_title,
-  }: Movie = props?.route?.params?.movieDetails;
+  }: Movie = props?.route?.params?.movieDetails; //Obj destructuring
 
   const filteredGenres = getAllGenre?.data?.genres?.filter((genre: any) =>
     genre_ids?.includes(genre?.id),
-  );
+  ); // filter all the genres which belong to this movie
 
   return (
     <View style={styles.mainContainer}>

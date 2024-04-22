@@ -20,7 +20,7 @@ import {useGetUpcomingMovies} from '@hooks/useGetUpcomingMovies';
 
 const AppBannerHome = () => {
   
-  const upcomingMovie: any = useGetUpcomingMovies();
+  const upcomingMovie: any = useGetUpcomingMovies(); //api call to get upcoming movies
 
   const renderMovieBanner = ({item, index}: any) => {
     return (

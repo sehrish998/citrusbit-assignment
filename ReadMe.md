@@ -34,7 +34,6 @@ To distribute the application, adhere to the Xcode instructions.
 
 1) React Native npx on Android
 2) Connect an actual device to your computer or launch an Android emulator before launching the program on either.
-3) Keystore has been added and established appropriately.
 3) select Android and then./gradlew assembleRelease
 4) The android/app/build/outputs/apk/release directory will contain the created APK file.
 

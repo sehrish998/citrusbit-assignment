@@ -6,7 +6,6 @@
     "paths": {
       "tslib": ["path/to/node_modules/tslib/tslib.d.ts"],
       "@components/*": ["components/*"],
-      "@assets/*": ["assets/*"],
       "@api/*": ["api/*"],
       "@screens/*": ["screens/*"],
       "@hooks/*": ["hooks/*"],

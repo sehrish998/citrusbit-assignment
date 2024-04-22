@@ -15,18 +15,18 @@ export interface MovieDetails {
 
 const HomeScreen = () => {
   const [movieList, setMoviesList] = React.useState<MovieDetails[]>([]);
-  const {data: movieItem}: any = useGetAllMovies();
-  const {data: genres}: any = useGetAllGenre();
+  const {data: movieItem}: any = useGetAllMovies(); //get all the movies
+  const {data: genres}: any = useGetAllGenre(); //get all the genre
 
   useEffect(() => {
-    getAllMovies();
+    getAllMovies(); //func to get all movies w.r.t genre run this function only when dependency is changed
   }, [movieItem, genres]);
 
   const getAllMovies = () => {
     genres?.genres?.map((item: Genre) => {
       const moviesWithGenre = movieItem?.results?.filter((movie: Movie) =>
         movie.genre_ids.includes(item.id),
-      );
+      ); // filter all the movies which belong to this particular genre
       if (moviesWithGenre?.length > 0) {
         setMoviesList((prev: MovieDetails[]) => [
           ...prev,
