@@ -3,7 +3,7 @@ import {httpMovies} from '@api/axiosConfig';
 
 import {API_KEY} from '@env';
 import { MovieResponse } from '@models/MovieModel';
-import { SnackbarSuccess } from '@utils/SnackBar';
+import { SnackbarError } from '@utils/SnackBar';
 
 async function useGetAllMoviesRequest<T>() {
   try {
@@ -12,7 +12,7 @@ async function useGetAllMoviesRequest<T>() {
     );
     return res.data;
   } catch (err: any) {
-    SnackbarSuccess(err?.response?.data?.message);
+    SnackbarError(err?.response?.data?.message);
     throw new Error(err.response?.data?.message);
   }
 }

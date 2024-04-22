@@ -58,7 +58,7 @@ const MovieDetailsScreen = (props: any) => {
           <Text style={styles.tableTitle}>Genres</Text>
           <View style={styles.genreContainer}>
             {filteredGenres?.map((genre: any, index: any) => (
-              <Text style={styles.tableValue}>
+              <Text style={styles.tableValue} key={index}>
                 {genre?.name} {filteredGenres?.length == index + 1 ? '' : ', '}
               </Text>
             ))}

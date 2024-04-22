@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, FlatList, ScrollView, StatusBar} from 'react-native';
+import {StyleSheet, FlatList, View, StatusBar} from 'react-native';
 
 import {useGetAllMovies} from '@hooks/useGetAllMovies';
 import AppHorizontalScroll from '@components/AppHorizontalScroll';
@@ -14,14 +14,13 @@ export interface MovieDetails {
 }
 
 const HomeScreen = () => {
-
   const [movieList, setMoviesList] = React.useState<MovieDetails[]>([]);
-  const {data: movieItem}: any = useGetAllMovies(); 
+  const {data: movieItem}: any = useGetAllMovies();
   const {data: genres}: any = useGetAllGenre();
 
   useEffect(() => {
     getAllMovies();
-  }, [movieItem , genres]);
+  }, [movieItem, genres]);
 
   const getAllMovies = () => {
     genres?.genres?.map((item: Genre) => {
@@ -42,21 +41,22 @@ const HomeScreen = () => {
   };
 
   return (
-
-    <ScrollView style={styles.mainContainer}>
-      <StatusBar
-        barStyle={'default'}
-        translucent
-        backgroundColor={'transparent'}
-      />
-      <AppBannerHome />
+    <View style={styles.mainContainer}>
       <FlatList
-        style={styles.movieCard}
         data={movieList}
         renderItem={item => <AppHorizontalScroll item={item} />}
+        ListHeaderComponent={
+          <>
+            <StatusBar
+              barStyle={'default'}
+              translucent
+              backgroundColor={'transparent'}
+            />
+            <AppBannerHome />
+          </>
+        }
       />
-    </ScrollView>
-
+    </View>
   );
 };
 
@@ -66,9 +66,6 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     backgroundColor: 'black',
-  },
-  movieCard: {
-    padding: 20,
   },
   headerContainer: {
     flexDirection: 'row',

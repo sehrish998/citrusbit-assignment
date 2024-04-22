@@ -21,7 +21,6 @@ interface MovieItems {
 }
 
 const AppHorizontalScroll = ({item}: MovieItems) => {
-  
   const navigation: any = useNavigation();
 
   const renderItem = (movie: any, index: number) => {
@@ -47,9 +46,10 @@ const AppHorizontalScroll = ({item}: MovieItems) => {
   };
 
   return (
-    <View>
+    <View style={styles.mainContainer}>
       <Text style={styles.genreTitle}>{item?.item?.genreName}</Text>
       <FlatList
+        nestedScrollEnabled={true}
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
@@ -65,6 +65,9 @@ const AppHorizontalScroll = ({item}: MovieItems) => {
 export default React.memo(AppHorizontalScroll);
 
 const styles = StyleSheet.create({
+  mainContainer: {
+    paddingHorizontal: 20,
+  },
   genreTitle: {
     color: 'white',
     fontSize: responsiveFontSize(2.3),
