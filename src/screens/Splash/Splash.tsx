@@ -19,7 +19,7 @@ const Splash = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={'transparent'} hidden />
+      {/* <StatusBar backgroundColor={'transparent'} hidden /> */}
       <Image
         style={styles.logo}
         source={{

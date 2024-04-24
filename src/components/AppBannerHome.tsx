@@ -19,7 +19,6 @@ import {IMAGE_URL} from '@env';
 import {useGetUpcomingMovies} from '@hooks/useGetUpcomingMovies';
 
 const AppBannerHome = () => {
-  
   const upcomingMovie: any = useGetUpcomingMovies(); //api call to get upcoming movies
 
   const renderMovieBanner = ({item, index}: any) => {
@@ -70,7 +69,7 @@ const AppBannerHome = () => {
         horizontal
         data={upcomingMovie?.data?.results}
         renderItem={renderMovieBanner}
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
       />
     </View>
   );
@@ -78,7 +77,7 @@ const AppBannerHome = () => {
 
 const styles = StyleSheet.create({
   container: {
-    height: responsiveHeight(80),
+    height: responsiveHeight(70),
     width: '100%',
   },
   movieBanner: {

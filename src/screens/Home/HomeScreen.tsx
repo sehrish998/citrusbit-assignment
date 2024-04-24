@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, FlatList, View, StatusBar} from 'react-native';
+import {StyleSheet, FlatList, View, StatusBar , SafeAreaView} from 'react-native';
 
 import {useGetAllMovies} from '@hooks/useGetAllMovies';
 import AppHorizontalScroll from '@components/AppHorizontalScroll';
@@ -41,22 +41,17 @@ const HomeScreen = () => {
   };
 
   return (
-    <View style={styles.mainContainer}>
+    <SafeAreaView style={styles.mainContainer}>
       <FlatList
         data={movieList}
         renderItem={item => <AppHorizontalScroll item={item} />}
         ListHeaderComponent={
           <>
-            <StatusBar
-              barStyle={'default'}
-              translucent
-              backgroundColor={'transparent'}
-            />
             <AppBannerHome />
           </>
         }
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

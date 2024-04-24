@@ -69,9 +69,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   genreTitle: {
+    fontWeight:"800",
     color: 'white',
-    fontSize: responsiveFontSize(2.3),
-    marginVertical: 2,
+    fontSize: responsiveFontSize(2.5),
+    marginVertical: 4,
   },
   movieCard: {
     width: responsiveWidth(40),

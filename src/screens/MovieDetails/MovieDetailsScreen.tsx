@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, ScrollView, StatusBar} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, StatusBar , SafeAreaView} from 'react-native';
 import React from 'react';
 import FastImage from 'react-native-fast-image';
 import {responsiveFontSize, responsiveHeight} from 'react-native-responsive-dimensions';
@@ -32,7 +32,7 @@ const MovieDetailsScreen = (props: any) => {
   ); // filter all the genres which belong to this movie
 
   return (
-    <View style={styles.mainContainer}>
+    <SafeAreaView style={styles.mainContainer}>
       <StatusBar
         barStyle={'default'}
         translucent
@@ -84,7 +84,7 @@ const MovieDetailsScreen = (props: any) => {
           value={video == false ? 'False' : 'True'}
         />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
     paddingBottom: 90,
   },
   movieTitle: {
+    fontWeight:"700",
     color: 'white',
     fontSize: responsiveFontSize(2.5),
     marginTop: 20,
@@ -127,10 +128,12 @@ const styles = StyleSheet.create({
   },
   tableTitle: {
     color: 'gray',
-    fontSize: responsiveFontSize(1.7),
+    fontSize: responsiveFontSize(1.8),
+    fontWeight:"600"
   },
   tableValue: {
     color: 'gray',
-    fontSize: responsiveFontSize(1.7),
+    fontSize: responsiveFontSize(1.8),
+    fontWeight:"600"
   },
 });

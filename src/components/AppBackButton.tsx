@@ -19,7 +19,7 @@ const AppBackButton = () => {
 const styles = StyleSheet.create({
   goBackContainer: {
     position: 'absolute',
-    top: 10,
+    top: 70,
     left: 10,
     zIndex: 9999,
     backgroundColor: 'black',

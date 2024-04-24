@@ -28,11 +28,13 @@ const styles = StyleSheet.create({
   },
   tableTitle: {
     color: 'gray',
-    fontSize: responsiveFontSize(1.7),
+    fontSize: responsiveFontSize(1.8),
+    fontWeight:"600"
   },
   tableValue: {
     color: 'gray',
-    fontSize: responsiveFontSize(1.7),
+    fontSize: responsiveFontSize(1.8),
+    fontWeight:"600"
   },
 });
 
