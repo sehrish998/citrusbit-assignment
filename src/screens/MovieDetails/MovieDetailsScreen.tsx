@@ -134,6 +134,6 @@ const styles = StyleSheet.create({
   tableValue: {
     color: 'gray',
     fontSize: responsiveFontSize(1.8),
-    fontWeight:"600"
+    fontWeight:"500"
   },
 });
